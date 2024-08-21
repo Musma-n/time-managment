@@ -1,0 +1,85 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+ol {
+    counter-reset: item;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+li {
+    position: relative;
+    background-color: #e7f1ff;
+    color: #333333;
+    padding: 20px 20px 20px 60px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+li::before {
+    content: counter(item) ".";
+    counter-increment: item;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+li:hover {
+    background-color: #d0e7ff;
+    cursor: default;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    li {
+        padding: 15px 15px 15px 50px;
+        font-size: 16px;
+    }
+
+    li::before {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+        left: 15px;
+    }
+}
